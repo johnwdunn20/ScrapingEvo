@@ -10,18 +10,20 @@ import math
 # That way we can scrape fewer results
 # Search how you'd like, then enter your URL here:
 
-myUrl = 'https://www.evo.com/shop/ski/skis/twin-tip/mens'
+myUrl = '' # https://www.evo.com/shop/ski/skis/mens
 
 # After you've filtered, look for the number of results in the top left corner on Evo
 # Enter that number here:
-countSkis = 121
+
+countSkis = 1 # 118
 
 # Enter the pathway where you want to save your file, ie "desktop/results.xlsx"
 # Make sure to update your pathway if you want to run this with different intial search criteria and don't want to overwrite your intiial results
-myPathway = '/Users/JohnDunn/Documents/Python_Docs/Web Scraper/Results_TwinTips.xlsx'
+
+myPathway = '' # ie, users/YourName/Desktop/
 
 
-###############################################################################
+##################################################################################################
 
 # list of skis
 skiList = []
