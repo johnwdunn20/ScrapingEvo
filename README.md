@@ -1,2 +1,2 @@
 # ScrapingEvo
-Scrape Evo to search ski specifications
+Scrapes Evo to search ski specifications
