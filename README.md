@@ -9,5 +9,6 @@ This program will scrape each ski on Evo's website and return a horizontal table
 1. Use Evo's built in search functionality to limit your results set (I filtered to all Men's skis) in order to limit the number of skis you need to scrape and eventually query. Copy this link and assign _myUrl_ to it
 2. Assign the number of search results to _countSkis_. This number if available in the top left corner of your search results.
 3. Assign the pathway where you want to create your Excel to _myPathway_.
+4. You can then query this dataset with whatever criteria you'd like.
 
 
