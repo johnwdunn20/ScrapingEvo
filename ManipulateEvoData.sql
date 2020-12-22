@@ -1,0 +1,2 @@
+-- Need to install docker
+-- Or I can try manipulating my file with online SQL editors
