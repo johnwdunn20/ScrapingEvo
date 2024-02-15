@@ -7,6 +7,8 @@ This program will scrape each ski on Evo's website and return a horizontal table
 
 # Set Up
 1. Set up virtual environmetn with `virtualenv venv` and activate it `source venv/bin/activate`
+  a. Note: Windows commands are slightly different
+2. In the virtual environment shell, run `pip install -r requirements.txt`
 
 # Instructions
 1. Use Evo's built in search functionality to limit your results set (I filtered to all Men's skis) in order to limit the number of skis you need to scrape and eventually query. Copy this link and assign _myUrl_ to it
