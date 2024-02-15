@@ -20,7 +20,7 @@ countSkis = 1 # 118
 # Enter the pathway where you want to save your file, ie "desktop/results.xlsx"
 # Make sure to update your pathway if you want to run this with different intial search criteria and don't want to overwrite your intiial results
 
-myPathway = '' # ie, users/YourName/Desktop/
+myPathway = '/Users/johndunn/Documents/Coding/projects/scrapingevo/' # ie, users/YourName/Desktop/
 
 
 ##################################################################################################
