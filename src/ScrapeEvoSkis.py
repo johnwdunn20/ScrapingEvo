@@ -10,7 +10,7 @@ import math
 # That way we can scrape fewer results
 # Search how you'd like, then enter your URL here:
 
-myUrl = '' # https://www.evo.com/shop/ski/skis/mens
+myUrl = 'https://www.evo.com/shop/ski/skis/mens' # https://www.evo.com/shop/ski/skis/mens
 
 # After you've filtered, look for the number of results in the top left corner on Evo
 # Enter that number here:
