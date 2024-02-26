@@ -6,7 +6,7 @@ Evo's website contains a wide range of skis and each individual ski has numerous
 This program will scrape each ski on Evo's website and return a horizontal table exported to Excel. You can then query/search for your desired criteria. I used SQLite in Python to query the table.
 
 # Set Up
-1. Set up virtual environmetn with `virtualenv venv` and activate it `source venv/bin/activate`
+1. Set up virtual environment with `virtualenv venv` and activate it `source venv/bin/activate`
   a. Note: Windows commands are slightly different
 2. In the virtual environment shell, run `pip install -r requirements.txt`
 
