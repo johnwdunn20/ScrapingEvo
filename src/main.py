@@ -16,6 +16,7 @@ class ScrapeEvoSkis():
 
     def scrape(self, url, count_total_skis, printURls=False):
         print("Scraping Evo Skis")
+        # add logic from ScrapeEvoSkis.py
         
     def scrape_threads(self, url, count_total_skis, printURls=False):
         pass
