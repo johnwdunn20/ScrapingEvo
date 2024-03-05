@@ -6,13 +6,14 @@ from random import randint
 from time import sleep
 import math
 from datetime import datetime
+import os
 
 
 class ScrapeEvoSkis():
     def __init__(self, csv_location=None):
-        # if csv_location is None, store in current directory
+        # if csv_location is None, store in current directory. *** this needs to be updated to store in wherever it's called from
         if csv_location is None:
-            self.csv_location = os.getcwd() + '/raw_data.csv'
+            self.csv_location = os.path.abspath(__file__) + '/raw_data.csv'
         else:
             self.csv_location = csv_location
         # Store last scraped date
@@ -163,6 +164,21 @@ class ScrapeEvoSkis():
     # def scrape_threads(self, url, count_total_skis, printURls=False):
     #     pass
     
+    # Internal method to check if csv exists and has data before searching or organizing it
+    def _check_for_csv(self):
+        if not self.last_scraped:
+            return 'Scrape and populate data before searching it'
+        
+        # check if csv exists and has data
+        if os.path.exists(self.csv_location):
+            # check if it has data
+            df = pd.read_csv(self.csv_location)
+            if len(df) == 0:
+                return 'Scrape and populate data before searching it'
+                
+        else:
+            return 'Scrape and populate data before searching it'
+        
     def organize_data(self):
         # check if csv exists and has data
         if os.path.exists(self.csv_location):
@@ -180,4 +196,4 @@ class ScrapeEvoSkis():
             return 'Scrape and populate data before organizing it'
         
     def search(self):
-        pass
+        self._check_for_csv()
