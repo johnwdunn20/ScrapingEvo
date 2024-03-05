@@ -1,3 +1,5 @@
+# Script to scrape ski information from Evo.com - also available in the main.py file
+
 import requests
 import bs4
 import pandas as pd
