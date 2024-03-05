@@ -6,7 +6,7 @@ from random import randint
 from time import sleep
 import math
 from datetime import datetime
-import os
+from typing import List
 
 
 class ScrapeEvoSkis():
@@ -190,5 +190,16 @@ class ScrapeEvoSkis():
         else:
             return 'Scrape and populate data before organizing it'
         
-    def search(self):
+    def search(self, keywords: List[str]):
+        # check csv actually exists
         self._check_for_csv()
+        
+        # Load csv
+        df = pd.read_csv(self.csv_location)
+        
+        # search for keywords
+            
+        # return results
+        print(df)
+        return df
+        
