@@ -13,7 +13,10 @@ class ScrapeEvoSkis():
     def __init__(self, csv_location=None):
         # if csv_location is None, store in current directory. *** this needs to be updated to store in wherever it's called from
         if csv_location is None:
-            self.csv_location = os.path.abspath(__file__) + '/raw_data.csv'
+            # Get the directory of the current file (main.py)
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            # Append the file name to the directory
+            self.csv_location = os.path.join(current_dir, 'raw_data.csv')
         else:
             self.csv_location = csv_location
         # Store last scraped date
@@ -40,14 +43,11 @@ class ScrapeEvoSkis():
                 try:
                     # now need to actually get the href from this tag
                     links = ski_link.find('a', href=True)['href']
-
                     ski_list.append(links)
-
                     countSkis += 1
                 except:
                     # Need to print out error messages
                     continue
-                    
 
             # sleep to not overload Evo's servers
             sleep(randint(1, 6))
@@ -60,7 +60,6 @@ class ScrapeEvoSkis():
         content = []
 
         # Get info for individual skis
-
         for ski_name in ski_list:
 
             url_individual_ski = f'https://www.evo.com{ski_name}'
@@ -153,10 +152,6 @@ class ScrapeEvoSkis():
         
         # save to csv
         final_df.to_csv(self.csv_location, index=False)
-
-        # check equals countSkis
-        # print(len(ski_list))   
-
         
         # update last scraped date if successful
         self.last_scraped = datetime.now()
