@@ -1,4 +1,4 @@
-# execute with python3 -m examples.example 
+# execute with python3 src/example.py
 from main import ScrapeEvoSkis
 
 twin_tip = ScrapeEvoSkis()

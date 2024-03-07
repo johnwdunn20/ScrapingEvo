@@ -196,11 +196,29 @@ class ScrapeEvoSkis():
         
         # Load csv
         df = pd.read_csv(self.csv_location)
+        # print(df)
         
-        # search for keywords
-        pass 
+        # make entire dataframe lower case
+        df_lower = df.map(lambda x: x.lower() if isinstance(x, str) else x)
+        # print(df_lower)
+        
+        # Convert keywords to lowercase
+        keywords_lower = [keyword.lower() for keyword in keywords]
+        
+        # Empty series to store combined results
+        combined_result = pd.Series([False] * len(df))
     
-        # return results
-        print(df)
-        return df
+        # Loop through keywords and columns to find matches
+        for keyword in keywords_lower:
+            keyword_result = pd.Series([False] * len(df))
+            for col in df_lower.columns:
+                # Update keyword_result with rows containing the keyword in current column
+                keyword_result |= df_lower[col].str.contains(keyword, case=False, na=False)
+            # Combine results for this keyword with overall results
+            combined_result |= keyword_result
+        
+        # Return ski name and hyperlink for matches
+        # print(df.loc[combined_result, ['Ski', 'Hyperlink']])
+        return df.loc[combined_result, ['Ski', 'Hyperlink']]
+
         
